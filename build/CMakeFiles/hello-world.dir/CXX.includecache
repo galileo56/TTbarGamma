@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Anom.h
+
+../include/ElectroWeak.h
+
+../include/RHad.h
+Running.h
+../include/Running.h
+ElectroWeak.h
+../include/ElectroWeak.h
+
+../include/Running.h
+Anom.h
+../include/Anom.h
+complex
+-
+
+/Users/vmateu/GitHub/TTbarGamma/src/hello-world.cpp
+iostream
+-
+RHad.h
+/Users/vmateu/GitHub/TTbarGamma/src/RHad.h
+

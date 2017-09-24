@@ -1,0 +1,15 @@
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/install/local.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/install/strip.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/install.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/rebuild_cache.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/edit_cache.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/hello-world.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/list_install_components.dir
+/Users/vmateu/GitHub/TTbarGamma/build/CMakeFiles/mathlink.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/install/local.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/install/strip.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/install.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/libradiativereturn.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/list_install_components.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/rebuild_cache.dir
+/Users/vmateu/GitHub/TTbarGamma/build/lib/CMakeFiles/edit_cache.dir

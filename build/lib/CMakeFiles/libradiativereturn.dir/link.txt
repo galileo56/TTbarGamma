@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc liblibradiativereturn.a  CMakeFiles/libradiativereturn.dir/Anom.cpp.o CMakeFiles/libradiativereturn.dir/RHad.cpp.o CMakeFiles/libradiativereturn.dir/Running.cpp.o CMakeFiles/libradiativereturn.dir/ElectroWeak.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib liblibradiativereturn.a
