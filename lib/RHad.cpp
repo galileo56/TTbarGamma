@@ -45,18 +45,18 @@ for ( int i = 0; i < 3; i++){
   _coef[0][1] = 13.33982910125516 + 0.10356715567659536 * nh - 1.041366911171631 * nl ;
   _coef[0][2] = 188.67172035165487 + 1.8591544419385237 * nh + 0.06408045019609998 * pow(nh,2)
     - 26.677375174269212 * nl +  0.022243482163948114 * nh * nl + 0.6526907490815437 * pow(nl,2) ;
-     
+
   _coef[1][0] = 2.;
   _coef[1][1] = ( 2076. - 104. * (nl + nh) )/144. ;
   _coef[2][1] = 7.5 - 1./3. * (nl + nh) ;
 
   _coef[1][2] = 195.00458387187263 - 12.596570845269987 * nh -
  0.12305711613007586 * pow(nh,2) - 27.480713714296932 * nl +
- 0.5171751456386657 * nh * nl + 0.6402322617687417 * pow(nl, 2); 
- 
+ 0.5171751456386657 * nh * nl + 0.6402322617687417 * pow(nl, 2);
+
   _coef[2][2] = ( 2696.625 - 288.75 * (nh + nl) + 6.5 * pow(nl + nh, 2) ) / 27. ;
   _coef[3][2] = ( 877.5 - 84. * (nl + nh) + 2. * pow(nl + nh, 2) ) / 27. ;
-      
+
 }
 
 //------------------------------------------------------------------------------
@@ -105,7 +105,7 @@ double c, b, d, pV, pA, qV, qA, Amass, v2, kV, kA, m2, x;
 
    rVTree = _v * ( 3. - v2 )/2.;
    rATree = pow(_v,3);
-   
+
    if (x > 0.001){
 
    pV = 33./24. + 11./12. * v2 - 7./24. * pow(v2,2);
@@ -120,18 +120,18 @@ double c, b, d, pV, pA, qV, qA, Amass, v2, kV, kA, m2, x;
 
    Amass = ( 1. + v2 ) * (  gsl_sf_dilog( pow(b,2) ) + 2. * gsl_sf_dilog(b) - log(b) * log( pow(c,3)/8./v2 )  )
    + 3. * _v * log( m2/_v ) - _v * log(_v);
-   
+
    kV = Amass - ( pV * log(b) - qV) * d;
    kV = kV/_v;
-   
+
    kA = Amass - ( pA * log(b) - qA ) / v2;
    kA = kA/_v;
 
    rV1loop = 4./3. * rVTree * kV ;
    rA1loop = 4./3. * rATree * kA ;}
- 
+
    else{
-   
+
    double lx = log(x/2.) ;
    rV1loop = 1. + 6. * x - pow(x,2) * (0.5 + 6. * lx) -  pow(x,3)  * (161./54. + 4./9. * lx) ;
    rA1loop = 1. - x * (3. + 6. * lx) -  pow(x,2) * (1. - 9. * lx) +  pow(x,3) * (353./108.  - 40./9. * lx) ;
@@ -157,7 +157,7 @@ Running AlphaMass, ElectroWeak factors):
 
    _rQ[0][0] = 1;
    _rQ[0][1] = 1.985707398577798 - 0.11529539789360388 * _AlphaMass.run.numFlav;
-   _rQ[0][2] = -6.636935585488629 - 1.2001340534564595 * _AlphaMass.run.numFlav - 
+   _rQ[0][2] = -6.636935585488629 - 1.2001340534564595 * _AlphaMass.run.numFlav -
                 0.0051783553199245685 * pow( _AlphaMass.run.numFlav,2);
 
    for (int i = 0 ; i < 3 ; ++i) {
@@ -265,7 +265,7 @@ double RHad::sigma(double q, double mu)
 double coef[2];
  _factors.ewFactors(_AlphaMass.run.numFlav, q, coef);
 
-   return 4. * pow( _AlphaMass.alphaQED(q) ,2 ) * M_PI * (coef[0] + coef[1]) * rHad(q, mu)/pow(q,2);
+   return 4. * pow( _AlphaMass.alphaQED(q)/q ,2 ) * M_PI * (coef[0] + coef[1]) * rHad(q, mu);
 }
 
 //------------------------------------------------------------------------------
@@ -274,8 +274,8 @@ double RHad::sigmaMass(double q, double mu)
 double coef[2];
  _factors.ewFactors(_AlphaMass.run.numFlav, q, coef);
 
-   return 4. * pow( _AlphaMass.alphaQED(q),2 ) * M_PI * ( coef[0] * rHadMass(1, q, mu) +  
-   coef[1] * rHadMass(2, q, mu) )/pow(q,2);
+   return 4. * pow( _AlphaMass.alphaQED(q)/q,2 ) * M_PI * ( coef[0] * rHadMass(1, q, mu) +
+   coef[1] * rHadMass(2, q, mu) );
 }
 
 //------------------------------------------------------------------------------
@@ -315,7 +315,7 @@ double RHad::gInt(double x)
 {
    return (  ( 1 - 2 * x * (1 - x) ) * sin(2 * _deltaTheta) -
    pow(x,2) * _deltaTheta * ( cos(2 * _deltaTheta) - cos(2 * _theta) )  ) / x /
-   sqrt(    (  1 - pow( cos(_theta + _deltaTheta), 2 )  ) * 
+   sqrt(    (  1 - pow( cos(_theta + _deltaTheta), 2 )  ) *
    (  1 - pow( cos(_theta - _deltaTheta), 2 )  )   );
 }
 
@@ -365,7 +365,7 @@ double result, error;
    gsl_function F;
    F.function = integrandMassCone;
    F.params = this;
-   
+
    gsl_integration_qags (&F, x0, x1, 0, 1e-7, 1000, w, &result, &error);
 
    return result;
@@ -381,7 +381,7 @@ double result, error;
    gsl_function F;
    F.function = integrandCone;
    F.params = this;
-   
+
    gsl_integration_qags (&F, x0, x1, 0, 1e-7, 1000, w, &result, &error);
 
    return result;
@@ -397,7 +397,7 @@ double result, error;
    gsl_function F;
    F.function = integrandMass;
    F.params = this;
-   
+
    gsl_integration_qags (&F, x0, x1, 0, 1e-7, 1000, w, &result, &error);
 
    return result;
@@ -413,12 +413,10 @@ double result, error;
    gsl_function F;
    F.function = integrand;
    F.params = this;
-   
+
    gsl_integration_qags (&F, x0, x1, 0, 1e-7, 1000, w, &result, &error);
 
    return result;
 }
 
 } // namespace radiative
-
-

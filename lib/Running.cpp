@@ -35,7 +35,7 @@ Running::Running(int iorder, int nF, double mZ, double aMz, double mt, double mu
     double betaZ = 80./9., betaW = 17/9., betaTopW = 11./4., betaTop = 32./3. ;
 
     aQED = aQEDmZ;
-    
+
     if (_nF == 5){
 
     _aQEDref  = _aQEDmZ;
@@ -43,7 +43,7 @@ Running::Running(int iorder, int nF, double mZ, double aMz, double mt, double mu
     _betaQED = betaZ;
 
     } else if ( _nF == 6 ){
-    
+
 //     _aQEDref = alphaQEDGeneric(betaZ, _mZ, _aQEDmZ,  _mW)  ;
 //     _aQEDref = alphaQEDGeneric(betaW, _mW, _aQEDref, _mt) ;
      _aQEDref = alphaQEDGeneric(betaZ, _mZ, _aQEDmZ, _mt) ;
@@ -76,7 +76,7 @@ Running::Running(int iorder, int nF, double mZ, double aMz, double mt, double mu
     tab[3][3] = 1./216. ;
 
    if ( _nF <= 4 ){
-   
+
    nf = 4;
 
       tab[1][1] = - 1./6. ;
@@ -101,7 +101,7 @@ Running::Running(int iorder, int nF, double mZ, double aMz, double mt, double mu
                }
             }
          _alphaRef *= alpha5;
-         
+
          if( _nF < 4){ //Running from muBottom to muCharm
       tab[3][0] = 1.0567081783962546 - 0.08465149176954734 * 4 ;
       tab[3][1] = - ( 7074. - 281. * 4 )/1728. ;
