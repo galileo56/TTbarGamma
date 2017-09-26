@@ -161,7 +161,7 @@
 
 :Begin:
 :Function:		sigmaMassRad
-:Pattern:		SigmaMassRad[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,
+:Pattern:		  SigmaMassRad[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,
                 sin2ThetaW_, mQ_, muQ_, mCharm_,  muCharm_, x_, theta_, q_, mu_]
 :Arguments:		{scheme, order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ,
                 mCharm, muCharm, x, theta, q,  mu}
