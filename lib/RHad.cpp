@@ -75,7 +75,7 @@ return res;
 //------------------------------------------------------------------------------
 void DeltaMass::deltaMSbar(double mu, double deltaM[])
 {
-double massMu = _AlphaMass.mass(mu), alphaMu = _AlphaMass.alpha(mu) / 3.141592653589793 ;
+double massMu = _AlphaMass.mass(mu), alphaMu = _AlphaMass.alpha(mu) / M_PI ;
 double logM = log(mu/massMu);
 
 for ( int i = 0; i < 3; i++){
@@ -216,7 +216,7 @@ if ( q > 2 * m && _order >= 0 ) res = tree;
 if ( q > 2 * m && _order >= 1 ) {
    res += alphaMu * loop;
    if (_scheme == 1){
-      res += delta[0] * sch/m;
+      res += sch/m * delta[0];
    }
 }
 
