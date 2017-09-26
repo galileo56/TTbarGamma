@@ -50,7 +50,7 @@ include_directories(include ${GSL_INCLUDE_DIRS} ${GSLCBLAS_INCLUDE_DIRS})
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib)
 
 ## find additional system libraries for example dynamic loader lib:
-## find_library(DL_LIB dl) 
+## find_library(DL_LIB dl)
 
 
 ###############
@@ -73,7 +73,7 @@ if(Mathematica_MathLink_LIBRARY)
 
 	add_executable(mathlink src/mathlink.tm.cpp)
 	target_link_libraries(mathlink ${GSL_LIBRARIES} libradiativereturn ${Mathematica_MathLink_LIBRARY} ${M_LIB} ${DL_LIB} ${UUID_LIB} ${RT_LIB})
-	
+
 else(Mathematica_MathLink_LIBRARY)
 	message(STATUS "Checking for mathlink library -- not found, proceeding without mathlink")
 endif()
@@ -92,8 +92,8 @@ if(Mathematica_MathLink_LIBRARY)
 		install(CODE "execute_process(COMMAND install_name_tool -change /Volumes/Jenkins/workspace/MathLink.MacOSX-x86-64.release/scratch/CMake.build/lib/mathlink-libc++.framework/Versions/4.25/mathlink-libc++ ${Mathematica_MathLink_LIBRARY}/mathlink ${CMAKE_CURRENT_SOURCE_DIR}/bin/mathlink OUTPUT_QUIET)")
 		install(CODE "execute_process(COMMAND install_name_tool -change /Volumes/Jenkins/workspace/MathLink.MacOSX-x86-64.10.0/scratch/CMake.build/lib/mathlink-libc++.framework/Versions/4.25/mathlink-libc++ ${Mathematica_MathLink_LIBRARY}/mathlink ${CMAKE_CURRENT_SOURCE_DIR}/bin/mathlink OUTPUT_QUIET)")
 		install(CODE "execute_process(COMMAND install_name_tool -change @executable_path/../Frameworks/mathlink.framework/Versions/4.25/mathlink ${Mathematica_MathLink_LIBRARY}/mathlink ${CMAKE_CURRENT_SOURCE_DIR}/bin/mathlink OUTPUT_QUIET)")
+		install(CODE "execute_process(COMMAND install_name_tool -change @executable_path/../Frameworks/mathlink.framework/Versions/4.36/mathlink ${Mathematica_MathLink_LIBRARY}/mathlink ${CMAKE_CURRENT_SOURCE_DIR}/bin/mathlink OUTPUT_QUIET)")
 	endif()
 endif()
 
 install(TARGETS hello-world DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin)
-

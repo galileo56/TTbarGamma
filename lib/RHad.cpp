@@ -265,7 +265,8 @@ double RHad::sigma(double q, double mu)
 double coef[2];
  _factors.ewFactors(_AlphaMass.run.numFlav, q, coef);
 
-   return 4. * pow( _AlphaMass.alphaQED(q)/q ,2 ) * M_PI * (coef[0] + coef[1]) * rHad(q, mu);
+   return 4. * pow( _AlphaMass.alphaQED(q)/q ,2 ) * M_PI * (coef[0] + coef[1])
+   * rHad(q, mu);
 }
 
 //------------------------------------------------------------------------------
@@ -274,14 +275,15 @@ double RHad::sigmaMass(double q, double mu)
 double coef[2];
  _factors.ewFactors(_AlphaMass.run.numFlav, q, coef);
 
-   return 4. * pow( _AlphaMass.alphaQED(q)/q,2 ) * M_PI * ( coef[0] * rHadMass(1, q, mu) +
-   coef[1] * rHadMass(2, q, mu) );
+   return 4. * pow( _AlphaMass.alphaQED(q)/q,2 ) * M_PI * ( coef[0] *
+   rHadMass(1, q, mu) + coef[1] * rHadMass(2, q, mu) );
 }
 
 //------------------------------------------------------------------------------
 double RHad::sigmaMassRadiative(double x)
  { if ( 1 <= 2 * x || x <= 0) return 0;
-   if ( 1 > 2 * x && x > 0 ) return _alphaQED / pow(M_PI,2) * sigmaMass( _q * sqrt(1 - 2 * x), _eH * _q * sqrt(1 - 2 * x) ) * g(x);
+   if ( 1 > 2 * x && x > 0 ) return _alphaQED / pow(M_PI,2) *
+   sigmaMass( _q * sqrt(1 - 2 * x), _eH * _q * sqrt(1 - 2 * x) ) * g(x);
 }
 
 //------------------------------------------------------------------------------
@@ -293,13 +295,15 @@ double RHad::sigmaRadiative(double x)
 //------------------------------------------------------------------------------
 double RHad::sigmaRadiativeCone(double x)
 { if ( 1 <= 2 * x || x <= 0) return 0;
-   if ( 1 > 2 * x && x > 0 ) return 2 * _alphaQED / M_PI * sigma( _q * sqrt(1 - 2 * x), _eH * _q * sqrt(1 - 2 * x) ) * gInt(x);
+   if ( 1 > 2 * x && x > 0 ) return 2 * _alphaQED / M_PI *
+   sigma( _q * sqrt(1 - 2 * x), _eH * _q * sqrt(1 - 2 * x) ) * gInt(x);
 }
 
 //------------------------------------------------------------------------------
 double RHad::sigmaMassRadiativeCone(double x)
 { if ( 1 <= 2 * x || x <= 0) return 0;
-   if ( 1 > 2 * x && x > 0 ) return 2 * _alphaQED / M_PI * sigmaMass( _q * sqrt(1 - 2 * x), _eH * _q * sqrt(1 - 2 * x) ) * gInt(x);
+   if ( 1 > 2 * x && x > 0 ) return 2 * _alphaQED / M_PI *
+   sigmaMass( _q * sqrt(1 - 2 * x), _eH * _q * sqrt(1 - 2 * x) ) * gInt(x);
 }
 
 //------------------------------------------------------------------------------
