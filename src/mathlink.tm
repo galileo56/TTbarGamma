@@ -97,7 +97,7 @@
 
 :Begin:
 :Function:		rhadmass
-:Pattern:		RHadMass[scheme_, current_, order_, nf_, Mz_, aMz_, mQ_, muQ_, mCharm_, 
+:Pattern:		RHadMass[scheme_, current_, order_, nf_, Mz_, aMz_, mQ_, muQ_, mCharm_,
                 muCharm_, q_, mu_]
 :Arguments:		{scheme, current, order, nf, Mz, aMz, mQ, muQ, mCharm, muCharm, q, mu}
 :ArgumentTypes:	{Integer, Integer, Integer, Integer, Real, Real, Real, Real, Real, Real, Real, Real}
@@ -127,18 +127,17 @@
                 muQ_, mCharm_, muCharm_, x_, theta_, q_, mu_]
 :Arguments:		{order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ, mCharm,
                  muCharm, x, theta, q, mu}
-:ArgumentTypes:	{Integer, Integer, Real, Real, Real, Real, Real, Real, Real, Real, Real, 
+:ArgumentTypes:	{Integer, Integer, Real, Real, Real, Real, Real, Real, Real, Real, Real,
                 Real, Real, Real, Real, Real}
 :ReturnType:	Real
 :End:
 
 :Begin:
 :Function:		sigmaRadCone
-:Pattern:		SigmaRadCone[order_, nf_, _mW_, Mz_, aMz_, aQED_, gammaZ_, sin2ThetaW_,
-                mQ_, muQ_, mCharm_, muCharm_, x_, theta_, deltaTheta_, q_, mu_]
+:Pattern:		  SigmaRadCone[order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_, sin2ThetaW_,
+              mQ_, muQ_, mCharm_, muCharm_, x_, theta_, deltaTheta_, q_, mu_]
 :Arguments:		{order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ, mCharm,
-                muCharm, x, theta, deltaTheta, 
-                q, mu}
+              muCharm, x, theta, deltaTheta, q, mu}
 :ArgumentTypes:	{Integer, Integer, Real, Real, Real, Real, Real, Real, Real, Real, Real,
                 Real, Real, Real, Real, Real, Real}
 :ReturnType:	Real
@@ -173,8 +172,8 @@
 
 :Begin:
 :Function:		sigmaMassRadCone
-:Pattern:		SigmaMassRadCone[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,  
-                sin2ThetaW_, mQ_, muQ_, mCharm_,  muCharm_, x_, theta_, deltaTheta_, q_, 
+:Pattern:		SigmaMassRadCone[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,
+                sin2ThetaW_, mQ_, muQ_, mCharm_,  muCharm_, x_, theta_, deltaTheta_, q_,
                 mu_]
 :Arguments:		{scheme, order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ,
                 mCharm, muCharm, x, theta, deltaTheta, q,  mu}
@@ -185,8 +184,8 @@
 
 :Begin:
 :Function:		sigmaMassRadConeCum
-:Pattern:		SigmaMassRadConeCum[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,  
-                sin2ThetaW_, mQ_, muQ_, mCharm_,  muCharm_, x0_, x1_, theta_, deltaTheta_, 
+:Pattern:		SigmaMassRadConeCum[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,
+                sin2ThetaW_, mQ_, muQ_, mCharm_,  muCharm_, x0_, x1_, theta_, deltaTheta_,
                 q_, eh_]
 :Arguments:		{scheme, order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ,
                 mCharm, muCharm, x0, x1, theta, deltaTheta, q,  eh}
@@ -199,7 +198,7 @@
 :Function:		sigmaRadConeCum
 :Pattern:		SigmaRadConeCum[order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_, sin2ThetaW_,
                 mQ_, muQ_, mCharm_,  muCharm_, x0_, x1_, theta_, deltaTheta_, q_, eh_]
-:Arguments:		{order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ, mCharm, 
+:Arguments:		{order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ, mCharm,
                 muCharm, x0, x1, theta, deltaTheta, q, eh}
 :ArgumentTypes:	{Integer, Integer, Real, Real, Real, Real, Real, Real, Real, Real,
                 Real, Real, Real, Real, Real, Real, Real, Real}
@@ -208,7 +207,7 @@
 
 :Begin:
 :Function:		sigmaMassRadCum
-:Pattern:		SigmaMassRadCum[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,  
+:Pattern:		SigmaMassRadCum[scheme_, order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_,
                 sin2ThetaW_, mQ_, muQ_, mCharm_,  muCharm_, x0_, x1_, theta_, q_, eh_]
 :Arguments:		{scheme, order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ,
                 mCharm, muCharm, x0, x1, theta, q,  eh}
@@ -221,7 +220,7 @@
 :Function:		sigmaRadCum
 :Pattern:		SigmaRadCum[order_, nf_, mW_, Mz_, aMz_, aQED_, gammaZ_, sin2ThetaW_,
                 mQ_, muQ_, mCharm_,  muCharm_, x0_, x1_, theta_, q_, eh_]
-:Arguments:		{order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ, mCharm, 
+:Arguments:		{order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ, mCharm,
                 muCharm, x0, x1, theta, q,  eh}
 :ArgumentTypes:	{Integer, Integer, Real, Real, Real, Real, Real, Real, Real, Real,
                 Real, Real, Real, Real, Real, Real, Real}
@@ -234,7 +233,7 @@
                 sin2ThetaW_, mQ_, muQ_, mCharm_, muCharm_, q_, mu_]
 :Arguments:		{scheme, order, nf, mW, Mz, aMz, aQED, gammaZ, sin2ThetaW, mQ, muQ,
                  mCharm, muCharm, q, mu}
-:ArgumentTypes:	{Integer, Integer, Integer, Real, Real, Real, Real, Real, Real, Real, 
+:ArgumentTypes:	{Integer, Integer, Integer, Real, Real, Real, Real, Real, Real, Real,
                 Real, Real, Real, Real, Real}
 :ReturnType:	Real
 :End:
